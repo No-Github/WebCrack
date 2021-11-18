@@ -2,3 +2,4 @@
 /logs/20*
 *.pyc
 *test*
+push.sh
