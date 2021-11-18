@@ -1,6 +1,5 @@
 import os
 
-
 def txt2list(txt):
     ret = []
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), txt)
@@ -9,14 +8,13 @@ def txt2list(txt):
             ret.append(line.strip())
     return ret
 
-
 logConfig = {
     "log_filename": "logs.txt",  # 普通日志文件名称
     "success_filename": "success.txt",  # 成功日志文件名称
 }
 
 crackConfig = {
-    "timeout": 10,  # 超时时间
+    "timeout": 8,  # 超时时间
     "delay": 0.03,  # 每次请求之后sleep的间隔
     "test_username": "admin",  # 测试用户名
     "test_password": "length_test",  # 测试密码
@@ -34,7 +32,7 @@ crackConfig = {
 generatorConfig = {
     "dict_config": {
         "base_dict": {
-            "username_list": ['admin'],  # 爆破用户名字典
+            "username_list": txt2list("username_list.txt"),  # 爆破用户名字典
             "password_list": txt2list("password_list.txt")  # 爆破密码字典
 
         },
